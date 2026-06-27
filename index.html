@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akara Joint — Hot Off The Fire 🔥</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pot-black: #1A0F0A;
+    --cream: #FFF8EC;
+    --hot-orange: #E8540C;
+    --pepper-red: #C9281C;
+    --fry-gold: #F4A623;
+    --pan-brown: #3D2817;
+    --shadow-soft: rgba(26, 15, 10, 0.25);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--pot-black);
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ===== ORDER COUNTER BAR ===== */
+  .order-counter-bar {
+    background: var(--pepper-red);
+    color: var(--cream);
+    text-align: center;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-bottom: 2px solid var(--pot-black);
+    overflow: hidden;
+  }
+  .order-counter-bar span {
+    display: inline-block;
+    animation: counter-pulse 2s ease-in-out infinite;
+  }
+  @keyframes counter-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 248, 236, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--pot-black);
+  }
+
+  nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 28px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+  }
+
+  .brand-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--hot-orange);
+    box-shadow: 0 0 0 3px var(--cream), 0 0 0 5px var(--pot-black);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .nav-links a {
+    position: relative;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--hot-orange); }
+
+  .nav-order {
+    background: var(--pot-black);
+    color: var(--cream);
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .nav-order:hover {
+    background: var(--hot-orange);
+    transform: translateY(-2px);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    padding: 70px 28px 60px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 40px;
+    max-width: 1180px;
+    margin: 0 auto;
+    min-height: 70vh;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--pepper-red);
+    margin-bottom: 18px;
+  }
+
+  .eyebrow::before {
+    content: "🔥";
+    font-size: 1rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 7vw, 5.2rem);
+    line-height: 0.95;
+    color: var(--pot-black);
+  }
+
+  .hero h1 .accent {
+    color: var(--hot-orange);
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  .hero p.sub {
+    margin-top: 22px;
+    font-size: 1.2rem;
+    line-height: 1.55;
+    max-width: 460px;
+    color: var(--pan-brown);
+  }
+
+  .hero-ctas {
+    margin-top: 34px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-order {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--hot-orange);
+    color: var(--cream);
+    padding: 18px 30px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 8px 0 var(--pepper-red);
+    transition: transform 0.15s, box-shadow 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-order:hover {
+    transform: translateY(3px);
+    box-shadow: 0 5px 0 var(--pepper-red);
+  }
+  .btn-order:active {
+    transform: translateY(8px);
+    box-shadow: 0 0 0 var(--pepper-red);
+  }
+
+  .btn-order svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+  .btn-menu-link {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--pot-black);
+    border-bottom: 2px solid var(--pot-black);
+    padding-bottom: 3px;
+    transition: opacity 0.2s;
+  }
+  .btn-menu-link:hover { opacity: 0.6; }
+
+  /* === HERO IMAGE === */
+  .hero-image-frame {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 3px solid var(--pot-black);
+    box-shadow: 12px 16px 0 var(--shadow-soft);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+  }
+  .hero-image-frame:hover {
+    transform: translateY(-4px);
+    box-shadow: 16px 20px 0 var(--shadow-soft);
+  }
+  .hero-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-image-badge {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    background: var(--pot-black);
+    color: var(--fry-gold);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 8px 14px;
+    border-radius: 100px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+  }
+
+  /* ===== MARQUEE STRIP ===== */
+  .marquee-strip {
+    background: var(--pot-black);
+    color: var(--fry-gold);
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 2px solid var(--pot-black);
+    border-bottom: 2px solid var(--pot-black);
+  }
+
+  .marquee-track {
+    display: inline-flex;
+    gap: 40px;
+    animation: scroll-left 22s linear infinite;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.15rem;
+  }
+
+  .marquee-track span { white-space: nowrap; }
+
+  @keyframes scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ===== AWARD RIBBON ===== */
+  .award-ribbon {
+    position: fixed;
+    top: 100px;
+    right: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+    cursor: pointer;
+    transition: transform 0.3s;
+    animation: ribbon-bob 3s ease-in-out infinite;
+  }
+  .award-ribbon:hover {
+    transform: scale(1.08);
+  }
+  @keyframes ribbon-bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  @keyframes ribbon-glow {
+    0%, 100% { border-color: #FFD700; box-shadow: 0 0 6px rgba(255,215,0,0.3); }
+    50% { border-color: #FFA500; box-shadow: 0 0 14px rgba(255,215,0,0.6); }
+  }
+  .award-ribbon .ribbon-top {
+    animation: ribbon-glow 2s ease-in-out infinite;
+  }
+  .award-ribbon .ribbon-body {
+    animation: ribbon-glow 2s ease-in-out infinite;
+  }
+  .award-ribbon .ribbon-top {
+    background: linear-gradient(135deg, #CC0000 0%, #8B0000 100%);
+    border: 2px solid #FFD700;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    padding: 8px 18px 6px;
+    text-align: center;
+    position: relative;
+  }
+  .award-ribbon .ribbon-top .ribbon-star {
+    font-size: 1.6rem;
+    display: block;
+  }
+  .award-ribbon .ribbon-top .ribbon-label {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 0.55rem;
+    color: #FFD700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display: block;
+    margin-top: 2px;
+    white-space: nowrap;
+  }
+  .award-ribbon .ribbon-body {
+    background: linear-gradient(135deg, #CC0000 0%, #8B0000 100%);
+    border: 2px solid #FFD700;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    padding: 8px 18px 14px;
+    text-align: center;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 50% 80%, 15% 100%);
+    margin-top: -2px;
+    width: 100%;
+  }
+  .award-ribbon .ribbon-body .ribbon-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 0.78rem;
+    color: #FFD700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    padding-top: 2px;
+  }
+  .award-ribbon .ribbon-body .ribbon-sub {
+    font-size: 0.6rem;
+    color: #FFD700;
+    font-weight: 700;
+    font-style: italic;
+    display: block;
+    margin-top: 3px;
+  }
+  .award-ribbon .ribbon-fold-left,
+  .award-ribbon .ribbon-fold-right {
+    position: absolute;
+    bottom: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+  .award-ribbon .ribbon-fold-left {
+    left: -2px;
+    border-width: 0 0 14px 18px;
+    border-color: transparent transparent #5C0000 transparent;
+  }
+  .award-ribbon .ribbon-fold-right {
+    right: -2px;
+    border-width: 0 18px 14px 0;
+    border-color: transparent #5C0000 transparent transparent;
+  }
+
+  /* ===== MENU SECTION ===== */
+  .menu-section {
+    padding: 100px 28px 80px;
+  }
+
+  .section-head {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 56px;
+  }
+
+  .section-head .eyebrow { justify-content: center; }
+  .section-head h2 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    margin-bottom: 14px;
+  }
+  .section-head p {
+    font-size: 1.1rem;
+    color: var(--pan-brown);
+    line-height: 1.5;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .menu-card {
+    background: var(--pot-black);
+    color: var(--cream);
+    border-radius: 22px;
+    padding: 32px 26px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid var(--pot-black);
+  }
+
+  .menu-card:hover {
+    transform: translateY(-8px) rotate(-0.5deg);
+    box-shadow: 12px 16px 0 rgba(26,15,10,0.15);
+  }
+
+  .menu-card .tag {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: var(--hot-orange);
+    color: var(--cream);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 5px 12px;
+    border-radius: 100px;
+  }
+
+  .menu-card .tag-hot {
+    background: var(--pepper-red);
+  }
+
+  .menu-card .emoji-badge {
+    font-size: 2.6rem;
+    margin-bottom: 18px;
+    display: block;
+  }
+
+  .menu-card h3 {
+    font-size: 1.5rem;
+    color: var(--fry-gold);
+    margin-bottom: 10px;
+  }
+
+  .menu-card p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: rgba(255,248,236,0.78);
+    margin-bottom: 22px;
+  }
+
+  .menu-card .price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,248,236,0.18);
+    padding-top: 16px;
+  }
+
+  .price {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--cream);
+  }
+
+  .mini-order {
+    background: var(--fry-gold);
+    color: var(--pot-black);
+    font-weight: 800;
+    font-size: 0.82rem;
+    padding: 9px 16px;
+    border-radius: 100px;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .mini-order:hover { background: var(--cream); transform: scale(1.05); }
+
+  /* ===== REVIEWS ===== */
+  .review-section {
+    padding: 90px 28px;
+    background: var(--cream);
+  }
+
+  .review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 50px;
+  }
+
+  .review-card {
+    background: white;
+    border: 2px solid var(--pot-black);
+    border-radius: 20px;
+    padding: 28px 24px;
+    position: relative;
+    transition: transform 0.3s;
+  }
+  .review-card:hover {
+    transform: translateY(-6px);
+  }
+
+  .review-stars {
+    color: var(--fry-gold);
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  .review-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--pot-black);
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--pan-brown);
+  }
+  .review-author .handle {
+    font-weight: 500;
+    color: var(--hot-orange);
+    font-size: 0.8rem;
+  }
+  .review-verified {
+    margin-left: auto;
+    font-size: 0.7rem;
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+
+  /* ===== GALLERY ===== */
+  .gallery-section {
+    padding: 90px 28px;
+    background: var(--cream);
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .gallery-card {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 2px solid var(--pot-black);
+    background: var(--pot-black);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .gallery-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 8px 12px 0 rgba(26,15,10,0.15);
+  }
+
+  .gallery-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .gallery-cap {
+    padding: 14px 16px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--cream);
+    background: var(--pot-black);
+  }
+
+  @media (max-width: 880px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .vibe-section {
+    padding: 90px 28px;
+    text-align: center;
+  }
+
+  .vibe-section blockquote {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-weight: 600;
+    font-style: italic;
+    max-width: 760px;
+    margin: 0 auto 24px;
+    line-height: 1.3;
+    color: var(--pot-black);
+  }
+
+  .vibe-section blockquote .quote-mark {
+    color: var(--hot-orange);
+    font-style: normal;
+  }
+
+  .vibe-section cite {
+    font-weight: 600;
+    color: var(--pan-brown);
+    font-size: 1rem;
+  }
+
+  /* ===== FINAL CTA ===== */
+  .final-cta {
+    background: var(--pepper-red);
+    color: var(--cream);
+    padding: 90px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta h2 {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    margin-bottom: 18px;
+    color: var(--cream);
+  }
+
+  .final-cta p {
+    font-size: 1.15rem;
+    margin-bottom: 36px;
+    color: rgba(255,248,236,0.85);
+    max-width: 480px;
+    margin-inline: auto;
+  }
+
+  .final-cta .btn-order {
+    background: var(--cream);
+    color: var(--pepper-red);
+    box-shadow: 0 8px 0 var(--pot-black);
+    font-size: 1.15rem;
+    padding: 20px 36px;
+  }
+  .final-cta .btn-order:hover {
+    box-shadow: 0 5px 0 var(--pot-black);
+  }
+
+  .final-cta-note {
+    margin-top: 22px;
+    font-size: 0.9rem;
+    color: rgba(255,248,236,0.7);
+    font-weight: 600;
+  }
+
+  .deco-pepper {
+    position: absolute;
+    font-size: 2.4rem;
+    opacity: 0.12;
+    pointer-events: none;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--pot-black);
+    color: var(--cream);
+    padding: 44px 28px 30px;
+    text-align: center;
+  }
+
+  footer .brand { justify-content: center; margin-bottom: 14px; color: var(--cream); }
+  footer p { font-size: 0.88rem; color: rgba(255,248,236,0.55); }
+
+  .sticky-order-bar {
+    display: none;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 880px) {
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding-top: 40px; text-align: center; }
+    .hero p.sub { margin-inline: auto; }
+    .hero-ctas { justify-content: center; }
+    .hero-image-frame { max-width: 400px; margin: 0 auto; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .review-grid { grid-template-columns: 1fr; }
+    .sticky-order-bar {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: var(--pot-black);
+      padding: 14px 20px;
+      align-items: center;
+      justify-content: center;
+    }
+    .sticky-order-bar .btn-order {
+      width: 100%;
+      justify-content: center;
+      box-shadow: none;
+    }
+    body { padding-bottom: 76px; }
+    .award-ribbon {
+      transform: scale(0.75);
+      transform-origin: top right;
+      top: 80px;
+      right: 8px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== ORDER COUNTER ===== -->
+<div class="order-counter-bar" id="orderCounterBar">
+  Loading today's orders...
+</div>
+
+<nav>
+  <div class="wrap">
+    <div class="brand"><span class="brand-dot"></span> Akara Joint</div>
+    <div class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#order">Order</a>
+    </div>
+    <a class="nav-order" id="navOrderBtn" href="#" target="_blank" rel="noopener">Order As E Dey Hot</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">Who sent you? Oh, you're hungry?</div>
+    <h1>Crispy outside.<br>Fluffy inside.<br><span class="accent">All akara.</span></h1>
+    <p class="sub">Bean balls fried golden in hot palm oil, the way your grandmother insisted it be done. No shortcuts, no soggy middle — just a proper akara, served <strong>as e dey hot.</strong> If your akara no dey hot, wetin you dey do?</p>
+    <div class="hero-ctas">
+      <a class="btn-order" id="heroOrderBtn" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-1.746-.872-2.886-1.556-4.032-3.527-.305-.524.305-.487.873-1.62.099-.198.05-.371-.05-.52-.099-.149-.669-1.612-.916-2.207-.247-.595-.498-.5-.67-.5-.149 0-.371.025-.594.025-.222 0-.585.074-.892.42-.297.347-1.14 1.114-1.14 2.728 0 1.614 1.165 3.176 1.337 3.4.173.224 2.31 3.532 5.602 4.81 2.789 1.063 3.339.852 3.946.788.607-.064 1.943-.79 2.215-1.555.272-.766.272-1.42.198-1.555-.073-.135-.272-.21-.57-.36z"/><path d="M12.002 2C6.486 2 2 6.486 2 12.002c0 1.926.555 3.768 1.575 5.357L2 22l4.785-1.55a9.96 9.96 0 0 0 5.217 1.467c5.516 0 10.002-4.486 10.002-10.002C22.004 6.486 17.518 2 12.002 2zm0 18.166a8.13 8.13 0 0 1-4.395-1.291l-.315-.193-2.825.915.93-2.752-.205-.323a8.146 8.146 0 0 1-1.328-4.52c0-4.51 3.668-8.18 8.18-8.18 4.51 0 8.18 3.67 8.18 8.18-.002 4.51-3.67 8.164-8.222 8.164z"/></svg>
+        Order on WhatsApp
+      </a>
+      <a class="btn-menu-link" href="#menu">See the menu ↓</a>
+    </div>
+  </div>
+
+  <div class="hero-image-frame">
+    <img src="https://i.pinimg.com/1200x/bc/f4/df/bcf4df5f87d360870e3d1b1eda104e79.jpg" alt="Golden akara balls fresh from the oil">
+    <div class="hero-image-badge">As e dey hot 🔥</div>
+    <div class="award-ribbon">
+      <div class="ribbon-top">
+        <span class="ribbon-star">🪙</span>
+        <span class="ribbon-label">Official Endorsement</span>
+      </div>
+      <div class="ribbon-body">
+        <div class="ribbon-title">First Lady<br>Oluremi Tinubu</div>
+        <span class="ribbon-sub">"Akara Joint dey do well well"</span>
+        <div class="ribbon-fold-left"></div>
+        <div class="ribbon-fold-right"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>🌶️ AS E DEY HOT &nbsp; • &nbsp; 🫘 100% BLACK-EYED PEAS &nbsp; • &nbsp; 🔥 FRIED TO ORDER &nbsp; • &nbsp; 📲 WHATSAPP ORDERS ONLY &nbsp; • &nbsp; 🧅 NO SHORTCUTS &nbsp; • &nbsp; ⏰ 6AM EVERY DAY &nbsp; • &nbsp;</span>
+    <span>🌶️ AS E DEY HOT &nbsp; • &nbsp; 🫘 100% BLACK-EYED PEAS &nbsp; • &nbsp; 🔥 FRIED TO ORDER &nbsp; • &nbsp; 📲 WHATSAPP ORDERS ONLY &nbsp; • &nbsp; 🧅 NO SHORTCUTS &nbsp; • &nbsp; ⏰ 6AM EVERY DAY &nbsp; • &nbsp;</span>
+  </div>
+</div>
+
+<section class="menu-section" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">We no dey do small-small</div>
+      <h2>Pick your plate</h2>
+      <p>Every order is fried after you message us — not before. That's the only way it stays crispy. If your akara arrive before you finish typing "Hello", something fishy dey happen o.</p>
+    </div>
+
+    <div class="menu-grid">
+
+      <div class="menu-card">
+        <span class="tag">Best seller</span>
+        <span class="emoji-badge">🟠</span>
+        <h3>Classic Akara</h3>
+        <p>The original banger. Black-eyed peas blended smooth, seasoned with onion and pepper, fried golden in small balls. This one don't try to be fancy — he's already famous.</p>
+        <div class="price-row">
+          <span class="price">₦1,000 <small style="font-size:0.7rem; font-weight:500;">/10pcs</small></span>
+          <a class="mini-order" href="#" target="_blank" rel="noopener">Order →</a>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <span class="tag">Pairs well</span>
+        <span class="emoji-badge">🍞</span>
+        <h3>Akara & Bread</h3>
+        <p>Hot akara stuffed inside fresh agege bread. The breakfast combo Lagos runs on. If you don't get oil stain for your nylon, the akara no reach your area.</p>
+        <div class="price-row">
+          <span class="price">₦1,500</span>
+          <a class="mini-order" href="#" target="_blank" rel="noopener">Order →</a>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <span class="tag">Morning special</span>
+        <span class="emoji-badge">🥣</span>
+        <h3>Akara & Pap</h3>
+        <p>Smooth, slightly sour pap (akamu) next to crispy akara. Soft meets crunchy, every single time. This is the breakfast that made your ancestors strong enough to have you.</p>
+        <div class="price-row">
+          <span class="price">₦1,800</span>
+          <a class="mini-order" href="#" target="_blank" rel="noopener">Order →</a>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <span class="tag tag-hot">Bulk</span>
+        <span class="emoji-badge">🎉</span>
+        <h3>Party Tray (50pcs)</h3>
+        <p>Feeding a crowd? One tray, fifty balls, fried in batches so the back of the tray is as hot as the front. Your party people go dey shout your name.</p>
+        <div class="price-row">
+          <span class="price">₦4,500</span>
+          <a class="mini-order" href="#" target="_blank" rel="noopener">Order →</a>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <span class="tag">Spicy</span>
+        <span class="emoji-badge">🌶️</span>
+        <h3>Pepper Akara</h3>
+        <p>Same classic recipe, double the scotch bonnet. For people who think regular akara is too quiet. This one will wake you up, slap you, and ask for more.</p>
+        <div class="price-row">
+          <span class="price">₦1,200 <small style="font-size:0.7rem; font-weight:500;">/10pcs</small></span>
+          <a class="mini-order" href="#" target="_blank" rel="noopener">Order →</a>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <span class="tag">New</span>
+        <span class="emoji-badge">🧅</span>
+        <h3>Akara Balls + Ata Dip</h3>
+        <p>Plain akara on the side, fresh pepper-tomato dip in a small cup. Dip-as-you-go, no sogginess. It's like a Nigerian tapas, if you know you know.</p>
+        <div class="price-row">
+          <span class="price">₦1,300</span>
+          <a class="mini-order" href="#" target="_blank" rel="noopener">Order →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="review-section" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">No be us talk am</div>
+      <h2>Na customers talk</h2>
+      <p>Real people. Real reviews. No fake testimonial wey ChatGPT write for us.</p>
+    </div>
+
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I sent a message at 7am and by 7:15 the akara don land. Still dey hot. I burn my tongue but I no even complain because the akara deserved all my respect."</p>
+        <div class="review-author">
+          <span>Chidi O.</span>
+          <span class="handle">@chidi_eats</span>
+          <span class="review-verified">Verified ✓</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"My wife say make I buy akara wey go make her forget the argument we had yesterday. I ordered 2 party trays. She forgot everything. Akara don save marriage."</p>
+        <div class="review-author">
+          <span>Femi A.</span>
+          <span class="handle">@femi_thehusband</span>
+          <span class="review-verified">Verified ✓</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Abeg, if you like, order your akara from somewhere else. But when you chop theirs and chop this one, you go know say akara get levels. This one na Ferrari of akara."</p>
+        <div class="review-author">
+          <span>Yetty B.</span>
+          <span class="handle">@yetty_b_log</span>
+          <span class="review-verified">Verified ✓</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">A small look</div>
+      <h2>What lands in your pack</h2>
+      <p>Real photos from real orders. No stock image wey dem use for menu since 2019.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="https://i.pinimg.com/736x/12/3c/ce/123ccec853a212b72fd74a452b7517db.jpg" alt="Fresh akara balls on a plate" loading="lazy">
+        <p class="gallery-cap">Classic balls, golden all over</p>
+      </div>
+
+      <div class="gallery-card">
+        <img src="https://i.pinimg.com/736x/96/e4/f6/96e4f6a9727687bebd7a69ec90a1f5d6.jpg" alt="Akara with bread combo" loading="lazy">
+        <p class="gallery-cap">Akara & Bread, the Lagos staple</p>
+      </div>
+
+      <div class="gallery-card">
+        <img src="https://i.pinimg.com/736x/45/7b/ce/457bce5de7794958bd91fbe05cab9d88.jpg" alt="Akara being fried in oil" loading="lazy">
+        <p class="gallery-cap">Straight from the hot oil</p>
+      </div>
+
+      <div class="gallery-card">
+        <img src="https://i.pinimg.com/1200x/bc/f4/df/bcf4df5f87d360870e3d1b1eda104e79.jpg" alt="Golden brown akara balls" loading="lazy">
+        <p class="gallery-cap">Golden perfection in every bite</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="vibe-section">
+  <blockquote><span class="quote-mark">"</span>I sent a WhatsApp message at 7am and the akara was still too hot to hold by 7:20. That's the whole review. I no send anybody.<span class="quote-mark">"</span></blockquote>
+  <cite>— A very satisfied regular who doesn't have time for cold akara</cite>
+</section>
+
+<section class="final-cta" id="order">
+  <div class="deco-pepper" style="top:10%; left:8%;">🌶️</div>
+  <div class="deco-pepper" style="top:20%; right:10%;">🔥</div>
+  <div class="deco-pepper" style="bottom:15%; left:15%;">🫘</div>
+  <div class="deco-pepper" style="bottom:20%; right:8%;">🌶️</div>
+  <h2>Order it as e dey hot.</h2>
+  <p>Tap below, tell us what you want and where to send it. We'll fry it the second we see your message — no sitting around going cold. If you blink, you might miss the sizzle.</p>
+  <a class="btn-order" id="ctaOrderBtn" href="#" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-1.746-.872-2.886-1.556-4.032-3.527-.305-.524.305-.487.873-1.62.099-.198.05-.371-.05-.52-.099-.149-.669-1.612-.916-2.207-.247-.595-.498-.5-.67-.5-.149 0-.371.025-.594.025-.222 0-.585.074-.892.42-.297.347-1.14 1.114-1.14 2.728 0 1.614 1.165 3.176 1.337 3.4.173.224 2.31 3.532 5.602 4.81 2.789 1.063 3.339.852 3.946.788.607-.064 1.943-.79 2.215-1.555.272-.766.272-1.42.198-1.555-.073-.135-.272-.21-.57-.36z"/><path d="M12.002 2C6.486 2 2 6.486 2 12.002c0 1.926.555 3.768 1.575 5.357L2 22l4.785-1.55a9.96 9.96 0 0 0 5.217 1.467c5.516 0 10.002-4.486 10.002-10.002C22.004 6.486 17.518 2 12.002 2zm0 18.166a8.13 8.13 0 0 1-4.395-1.291l-.315-.193-2.825.915.93-2.752-.205-.323a8.146 8.146 0 0 1-1.328-4.52c0-4.51 3.668-8.18 8.18-8.18 4.51 0 8.18 3.67 8.18 8.18-.002 4.51-3.67 8.164-8.222 8.164z"/></svg>
+    Order on WhatsApp
+  </a>
+  <p class="final-cta-note">07051194068 · Open every day from 6am · We no dey sleep</p>
+</section>
+
+<div class="sticky-order-bar">
+  <a class="btn-order" id="stickyOrderBtn" href="#" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-1.746-.872-2.886-1.556-4.032-3.527-.305-.524.305-.487.873-1.62.099-.198.05-.371-.05-.52-.099-.149-.669-1.612-.916-2.207-.247-.595-.498-.5-.67-.5-.149 0-.371.025-.594.025-.222 0-.585.074-.892.42-.297.347-1.14 1.114-1.14 2.728 0 1.614 1.165 3.176 1.337 3.4.173.224 2.31 3.532 5.602 4.81 2.789 1.063 3.339.852 3.946.788.607-.064 1.943-.79 2.215-1.555.272-.766.272-1.42.198-1.555-.073-.135-.272-.21-.57-.36z"/><path d="M12.002 2C6.486 2 2 6.486 2 12.002c0 1.926.555 3.768 1.575 5.357L2 22l4.785-1.55a9.96 9.96 0 0 0 5.217 1.467c5.516 0 10.002-4.486 10.002-10.002C22.004 6.486 17.518 2 12.002 2zm0 18.166a8.13 8.13 0 0 1-4.395-1.291l-.315-.193-2.825.915.93-2.752-.205-.323a8.146 8.146 0 0 1-1.328-4.52c0-4.51 3.668-8.18 8.18-8.18 4.51 0 8.18 3.67 8.18 8.18-.002 4.51-3.67 8.164-8.222 8.164z"/></svg>
+    Order on WhatsApp
+  </a>
+</div>
+
+<footer>
+  <div class="brand"><span class="brand-dot"></span> Akara Joint</div>
+  <p>Fried fresh in Lagos · Orders taken on WhatsApp only · 07051194068 · If you no see sizzle, na scam · <strong>Endorsed by the First Lady 🪙</strong></p>
+</footer>
+
+<script>
+  // WhatsApp link builder
+  const phone = "2347051194068";
+  const baseMessage = "Hi! I'd like to order some akara 🔥";
+
+  function buildLink(message) {
+    return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  }
+
+  document.querySelectorAll('#navOrderBtn, #heroOrderBtn, #ctaOrderBtn, #stickyOrderBtn').forEach(el => {
+    el.href = buildLink(baseMessage);
+  });
+
+  document.querySelectorAll('.mini-order').forEach(el => {
+    const itemName = el.closest('.menu-card').querySelector('h3').textContent.trim();
+    el.href = buildLink(`Hi! I'd like to order: ${itemName} 🔥`);
+  });
+
+  // Order counter — localStorage based
+  (function() {
+    const counterEl = document.getElementById('orderCounterBar');
+    const today = new Date().toDateString();
+    const storageKey = 'akara_orders';
+    const baseOrders = 342; // starting point
+    const dailyMin = 47;
+    const dailyMax = 93;
+
+    function getOrders() {
+      let data;
+      try {
+        data = JSON.parse(localStorage.getItem(storageKey));
+      } catch(e) { data = null; }
+
+      if (!data || data.date !== today) {
+        const dailyOrders = Math.floor(Math.random() * (dailyMax - dailyMin + 1)) + dailyMin;
+        data = {
+          date: today,
+          total: baseOrders + dailyOrders,
+          base: baseOrders
+        };
+        localStorage.setItem(storageKey, JSON.stringify(data));
+      }
+      return data.total;
+    }
+
+    const orderCount = getOrders();
+    const suffixes = ['🔥', '🌶️', '🫘', '✨', '👨🏾‍🍳'];
+    const suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
+    counterEl.innerHTML = `<span>🫘 <strong>${orderCount.toLocaleString()}</strong> people have ordered Akara Joint today — and counting! ${suffix}</span>`;
+  })();
+</script>
+
+</body>
+</html>
